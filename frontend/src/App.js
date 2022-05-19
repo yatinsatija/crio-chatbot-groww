@@ -8,7 +8,10 @@ import LandingHeader from "./components/navbar/LandingHeader";
 import HomePage from "./pages/HomePage";
 import Registration from "./pages/registration/Registration";
 import CustomerSignIn from "./pages/signin/SignIn";
-
+import CSHeader from "./components/csheader/CSHeader";
+import DashHeader from "./pages/dashboard/dashHeader/DashHeader";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Checkout from "./pages/uploading/Checkout.component";
 function App() {
   return (
     <React.Fragment>
@@ -46,7 +49,28 @@ function App() {
                 </>
               }
             />
+            <Route
+              exact
+              path="/upload"
+              element={
+                <>
+                  <CSHeader />
+                  <br />
+                  <Checkout />
+                </>
+              }
+            />
             {/* <Route path="/" element={<HomePage />} /> */}
+            <Route
+              exact
+              path="/dashboard"
+              element={
+                <>
+                  <DashHeader />
+                  <Dashboard />
+                </>
+              }
+            />
           </Routes>
         </div>
       </BrowserRouter>

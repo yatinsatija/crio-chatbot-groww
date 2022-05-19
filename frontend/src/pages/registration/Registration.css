@@ -1,6 +1,8 @@
 .main
 {
-	width:40vw;}
+	width:40vw;
+background-color: #d9e4f5;
+background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);}
 fieldset input
 {
 	width:25vw;

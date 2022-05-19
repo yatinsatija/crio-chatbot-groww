@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Axios from "axios";
 import { Redirect, useNavigate } from "react-router-dom";
 // import { auth , firestore} from '../../backend/server';
+import "./SignIn.css";
 export default function CustomerSignIn() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -12,6 +13,10 @@ export default function CustomerSignIn() {
   const [loginStatus, setLoginStatus] = useState("");
 
   Axios.defaults.withCredentials = true;
+  const mystyle = {
+    backgroundColor: "#d9e4f5",
+    backgroundImage: "linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%)",
+  };
   const login = () => {
     if (
       username.match(
@@ -38,7 +43,7 @@ export default function CustomerSignIn() {
           console.log("YES");
           localStorage.setItem("isLoggedIn", "true");
           // alert("LoggedIn");
-          history("/");
+          history("/dashboard");
         }
       });
     }
@@ -55,7 +60,10 @@ export default function CustomerSignIn() {
   }, []);
 
   return (
-    <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
+    <article
+      style={mystyle}
+      className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center"
+    >
       <br />
       <br />
       <br />
