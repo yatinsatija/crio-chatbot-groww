@@ -59,7 +59,7 @@ function DashHeader() {
 
       <div className="header__nav" style={{ marginLeft: "45%" }}>
         <div>
-          <button onClick={(e) => history.push("/myorders")}>MY ORDERS</button>
+          <button onClick={(e) => history("/myorder")}>MY ORDERS</button>
         </div>
         {/* <Link to={!user && '/login'}>
           <div onClick={handleAuthenticaton} className="header__option">
@@ -81,14 +81,14 @@ function DashHeader() {
           <span className="header__optionLineTwo">Prime</span>
         </div> */}
 
-        <Link to="/checkout">
+        {/* <Link to="/checkout">
           <div className="header__optionBasket">
             <ShoppingBasketIcon />
             <span className="header__optionLineTwo header__basketCount">
               {basket?.length}
             </span>
           </div>
-        </Link>
+        </Link> */}
         <div>
           <button onClick={(e) => hello()}>LOGOUT</button>
         </div>

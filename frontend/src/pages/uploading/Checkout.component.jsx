@@ -15,7 +15,8 @@ import PaymentForm from "./PaymentForm.component";
 import Review from "./Review.component";
 import { useNavigate } from "react-router";
 import { useEffect, useState } from "react";
-// import { storage, firestore } from "../../firebase/firebase.utils";
+import { storage, firestore } from "../../firebase/firebase.utils";
+import Axios from "axios";
 
 function Copyright() {
   return (
@@ -95,13 +96,20 @@ export default function Checkout() {
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
-  const retrievedData1 = localStorage.getItem("status1");
+  const stocks = localStorage.getItem("stocks");
+  const sdata=JSON.parse(stocks);
+  const mf = localStorage.getItem("mf");
+  const mdata=JSON.parse(mf);
 
-  const retrievedData2 = localStorage.getItem("status2");
+  const fd = localStorage.getItem("fd");
+  const fdata=JSON.parse(fd);
 
-  const [data1,setData1]=useState([]);
-  const [data2,setData2]=useState([]);
 
+  // const [sdata,setSData]=useState([]);
+  // const [mdata,setMData]=useState([]);
+  // const [fdata,setFData]=useState([]);
+
+  const type=localStorage.getItem("producttype");
 
   
   return (
@@ -132,81 +140,61 @@ export default function Checkout() {
                 <Typography variant="subtitle1">
                   You order has been successfully uploaded . Once we find a correct user we will notify you. This is a great inittiative taken by you . All the best.
                 </Typography>
-                <Button
+                
+                  <Button
                     variant="contained"
                     color="primary"
                     onClick={(e)=>{
-                      setData1(JSON.parse(retrievedData1)); 
-                      setData2(JSON.parse(retrievedData2));
-                  //   firestore
-                  //   .collection("uploads")
+                      
+                  if(type==="stocks"){
                     
-                  //   .add({
-                  //     requestId: localStorage.getItem("request"),
-                  //     name: data1[0],
-                  //     email: data1[3],
-                  //     usn: data1[2],
-                  //     productname:data2[0] ,
-                  //     description:data2[2],
-                  //   })
-                  //   .then(function (docRef) {
-                  //     console.log("Document written with ID: ", docRef.id);
-                  //   })
-                  //   .catch(function (error) {
-                  //     console.error("Error adding document: ", error);
-                  //   });
-                  // alert(
-                  //   "Your response has been submitted we will reach you in a while"
-                  // );
-                }}
 
-                    className={classes.button}
-                  >
-                    Confirm 
-                  </Button>
-                  {/* <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={(e)=>{
-                      // setData1(JSON.parse(retrievedData1)); 
-                      // setData2(JSON.parse(retrievedData2));
-                    firestore
-                    .collection("items")
-                    
-                    .add({
-                      // requestId: localStorage.getItem("request"),
-                      description:data2[2],
-                      imageUrl:localStorage.getItem("url"),
-                      assignedTo:"",
 
-                      interestedUsers: [],
-                      isAssigned:false,
-                      
-                      // usn: data1[2],
-                      itemName:data2[0] ,
-                      ownerEmail: localStorage.getItem("currentUserEmail"),
-                      
-                      
 
-                    })
-                    .then(function (docRef) {
-                      console.log("Document written with ID: ", docRef.id);
-                    })
-                    .catch(function (error) {
-                      console.error("Error adding document: ", error);
+                    // setSData(JSON.parse(stocks)); 
+                    // console.log(sdata);
+                    Axios.post("http://localhost:3001/stocks", {
+                      productname: sdata[0],
+                      currentprice: sdata[1],
+                      idvalue: sdata[2],
+                      idper: sdata[3],
+                      img: localStorage.getItem("url"),
+                      
+                    }).then((response) => {
+                      console.log(response);
                     });
-                  alert(
-                    "Your response has been submitted we will reach you in a while"
-                  );
-                  
-                 history.push('/dashboard');
+                  }
+                  else if(type==="mf"){
+                    Axios.post("http://localhost:3001/mf", {
+                      productname: mdata[0],
+                      mfper: mdata[1],
+                      mfyear: mdata[2],
+                      img: localStorage.getItem("url"),
+                      
+                    }).then((response) => {
+                      console.log(response);
+                    });
+                  }
+                  else if(type==="fd"){
+                    Axios.post("http://localhost:3001/fd", {
+                      fdcmp: fdata[0],
+                      fdint: fdata[1],
+                      fdYear: fdata[2],
+                      img: localStorage.getItem("url"),
+                      
+                    }).then((response) => {
+                      console.log(response);
+                    });
+                  }
+                
+                 history("/dashboard");
 
                 }}
 
                     className={classes.button}
                   >
                     Submit
-                  </Button> */}
+                  </Button>
                   
               </React.Fragment>
             ) : (

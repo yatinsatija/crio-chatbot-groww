@@ -51,6 +51,9 @@ export default function PaymentForm() {
   const [fdcmp,setFdCmp]=useState("");
 const [fdint,setFdInt]=useState("");
  const [fdYear,setFdYear]=useState("");
+ var stocks = [productname,currentprice,idvalue,idper];
+  var mf = [productname,mfper,mfyear];
+  var fd = [fdcmp,fdint,fdYear];
   // var status2 = [productname,expirydate,description];
   return (
     <React.Fragment>
@@ -85,7 +88,7 @@ const [fdint,setFdInt]=useState("");
           
         </Grid>
         {producttype === "stocks" ? (
-          <Grid item xs={12} md={6}>
+          <Grid  item xs={12} md={6}>
             <Grid item xs={12} md={6}>
           <Typography variant="h6" gutterBottom>
             Product Name
@@ -93,6 +96,7 @@ const [fdint,setFdInt]=useState("");
             <TextField
               required
               id="product-name"
+              style={{width:"100%"}}
               // label="Product Name"
               fullWidth
               // autoComplete="cc-number"
@@ -112,6 +116,7 @@ const [fdint,setFdInt]=useState("");
           <TextField
             required
             id="current-price"
+            style={{width:"100%"}}
             // label="Current Price"
             fullWidth
             // autoComplete="cc-number"
@@ -158,6 +163,7 @@ const [fdint,setFdInt]=useState("");
               localStorage.setItem("idper",idper);
             }}
           />
+          {localStorage.setItem("stocks", JSON.stringify(stocks))}
         </Grid>
         <Grid item xs={12} md={6}>
           
@@ -224,6 +230,7 @@ const [fdint,setFdInt]=useState("");
               localStorage.setItem("mfyear",mfyear);
             }}
           />
+          {localStorage.setItem("mf", JSON.stringify(mf))}
         </Grid>
         <Grid item xs={12} md={6}>
           
@@ -291,6 +298,7 @@ const [fdint,setFdInt]=useState("");
               localStorage.setItem("fdYear",fdYear);
             }}
           />
+          {localStorage.setItem("fd", JSON.stringify(fd))}
         </Grid>
         <Grid item xs={12} md={6}>
           

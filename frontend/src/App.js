@@ -12,6 +12,8 @@ import CSHeader from "./components/csheader/CSHeader";
 import DashHeader from "./pages/dashboard/dashHeader/DashHeader";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Checkout from "./pages/uploading/Checkout.component";
+import Order from "./pages/dashboard/Orders";
+import ChatbotInterface from "./pages/chatbot/chatbot";
 function App() {
   return (
     <React.Fragment>
@@ -35,6 +37,16 @@ function App() {
                 <>
                   <LandingHeader />
                   <Registration />
+                </>
+              }
+            />
+            <Route
+              exact
+              path="/myorder"
+              element={
+                <>
+                  <CSHeader />
+                  <Order />
                 </>
               }
             />
@@ -68,6 +80,7 @@ function App() {
                 <>
                   <DashHeader />
                   <Dashboard />
+                  <ChatbotInterface URLName="dashboard" />
                 </>
               }
             />

@@ -1,7 +1,7 @@
 import React from "react";
 // import Axios from "axios";
 import "./imageupload.styles.scss";
-// import { storage, firestore } from "../../firebase/firebase.utils";
+import { storage, firestore } from "../../firebase/firebase.utils";
 
 class ImageUpload extends React.Component {
     constructor(props) {
@@ -16,23 +16,24 @@ class ImageUpload extends React.Component {
 
     _handleSubmit = async (event) => {
       
-      // const uploadTask = storage.ref(`userPhotoIds/${this.state.file.name}`).put(this.state.file);
+      const uploadTask = storage.ref(`PhotoIds/${this.state.file.name}`).put(this.state.file);
 
-            // uploadTask.on('state_changed',
-            //     (snapShot) => { alert("uploading in progress") },
-            //     (error) => { alert(error.message) },
-            //     () => {
-            //         storage
-            //             .ref('userPhotoIds')
-            //             .child(this.state.file.name)
-            //             .getDownloadURL()
-            //             .then((url) => {
-            //                 alert("Image_uploaded");
-            //                 localStorage.setItem("url",url)
-            //                 console.log("image uploaded");
-            //                 this.setState({ photoIdUrl: url }, () => console.log(this.state));
-            //             })
-            //     });
+            uploadTask.on('state_changed',
+                (snapShot) => { alert("uploading in progress") },
+                (error) => { alert(error.message) },
+                () => {
+                    storage
+                        .ref('PhotoIds')
+                        .child(this.state.file.name)
+                        .getDownloadURL()
+                        .then((url) => {
+                            alert("Image_uploaded");
+                            localStorage.setItem("url",url)
+                            console.log("image uploaded");
+                            console.log(url);
+                            this.setState({ photoIdUrl: url }, () => console.log(this.state));
+                        })
+                });
 
       
     };

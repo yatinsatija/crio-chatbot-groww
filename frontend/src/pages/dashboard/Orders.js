@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Dashboard.css";
+import "./Orders.css";
 import Product from "./Product";
 import Fd from "./Fd";
 import Mf from "./Mf";
@@ -7,7 +7,7 @@ import Mf from "./Mf";
 import Axios from "axios";
 import { Redirect, useNavigate } from "react-router-dom";
 
-function Dashboard() {
+function Order() {
   const [stocks, setStockList] = React.useState([]);
   const [mfs, setMfList] = React.useState([]);
 
@@ -16,17 +16,21 @@ function Dashboard() {
   const history = useNavigate();
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/stocks").then((response) => {
-      setStockList(response.data);
+    Axios.post("http://localhost:3001/getproducts", {
+      username: localStorage.getItem("email"),
+    }).then((response) => {
+      setStockList(response.data.product);
+      setMfList(response.data.fds);
+      setFdList(response.data.mfs);
       // console.log("stocks" + stocks[0].productname);
     });
-    Axios.get("http://localhost:3001/mf").then((response) => {
-      setMfList(response.data);
-    });
-    Axios.get("http://localhost:3001/fd").then((response) => {
-      setFdList(response.data);
-      console.log("fds" + fds[0].productname);
-    });
+    // Axios.get("http://localhost:3001/mf").then((response) => {
+    //   setMfList(response.data);
+    // });
+    // Axios.get("http://localhost:3001/fd").then((response) => {
+    //   setFdList(response.data);
+    //   console.log("fds" + fds[0].productname);
+    // });
   }, []);
 
   // const getMedicines = () => {
@@ -41,7 +45,7 @@ function Dashboard() {
         <div className="home__container">
           <img
             className="home__image"
-            src="https://images.pexels.com/photos/4245826/pexels-photo-4245826.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2021/10/banner-tracking.png"
             alt="EPharma"
             style={{ height: "90vh", width: "200vh" }}
           />
@@ -158,4 +162,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Order;

@@ -1,0 +1,72 @@
+[
+    {
+        "page": "dashboard",
+        "question": "What is the value of Gold ?", 
+        "answer": "It is Rs. 75,000",
+        "logged_in": true,
+        "kyc": true
+    },
+    {
+        "page": "dashboard",
+        "question": "What is the Share price of Gold ?",
+        "answer": "I don't know",
+        "logged_in": true,
+        "kyc": true
+    },
+    {
+        "page": "dashboard",
+        "question": "Do you want to know about fixed deposits ?", 
+        "answer": "I don't know",
+        "logged_in": true,
+        "kyc": true
+    },
+    {
+        "page": "orders",
+        "question": "What are stocks ?",
+        "answer": "I don't know",
+        "logged_in": true,
+        "kyc": false
+    },
+    {
+        "page": "orders",
+        "question": "Mutual funds are safe ?",
+        "answer": "I don't know",
+        "logged_in": false,
+        "kyc": false
+    },
+    
+    {
+        "page": "products",
+        "question": "What are fixed deposits ?",
+        "answer": "I don't know",
+        "logged_in": false,
+        "kyc": false
+    },
+    {
+        "page": "orders",
+        "question": "What are stocks ?",
+        "answer": "I don't know",
+        "logged_in": true,
+        "kyc": true
+    },
+    {
+        "page": "orders",
+        "question": "Mutual funds are safe ?",
+        "answer": "I don't know",
+        "logged_in": false,
+        "kyc": false
+    },
+    {
+        "page": "dashboard",
+        "question": "What are mutual funds ?",
+        "answer": "I don't know",
+        "logged_in": true,
+        "kyc": true
+    },
+    {
+        "page": "products",
+        "question": "What are fixed deposits ?",
+        "answer": "I don't know",
+        "logged_in": true,
+        "kyc": false
+    }]

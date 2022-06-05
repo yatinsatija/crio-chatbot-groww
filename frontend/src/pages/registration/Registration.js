@@ -151,6 +151,9 @@ class Registration extends React.Component {
           skillname: skillName,
           appplied: "Yes",
           kyc: kyc,
+          product: [],
+          fds: [],
+          mfs: [],
         }).then((response) => {
           console.log(response);
         });
@@ -257,7 +260,7 @@ class Registration extends React.Component {
                   />
                 </div>
                 {/* <div className="mv3"> */}
-                  {/* <label className="db fw6 lh-copy f6" htmlFor="password">
+                {/* <label className="db fw6 lh-copy f6" htmlFor="password">
                     Aadhar Card
                   </label>
                   <input type="file" onChange={this.handleFileChange1} />
