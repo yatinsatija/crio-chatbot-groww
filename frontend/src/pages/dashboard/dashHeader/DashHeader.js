@@ -16,6 +16,14 @@ function DashHeader() {
     localStorage.clear();
     history("/");
   };
+  const temp = () => {
+    // localStorage.setItem("isLoggedIn", false);
+    if (localStorage.getItem("isLoggedIn") === "true") {
+      history("/myorder");
+    } else {
+      alert("Please log in First");
+    }
+  };
   const back = () => {
     localStorage.removeItem("order");
     history("./");
@@ -58,8 +66,15 @@ function DashHeader() {
       </div> */}
 
       <div className="header__nav" style={{ marginLeft: "45%" }}>
+        {localStorage.getItem("email") == "monu@gmail.com" ? (
+          <div>
+            <button onClick={(e) => history("/upload")}>UPLOAD PRODUCT</button>
+          </div>
+        ) : (
+          <></>
+        )}
         <div>
-          <button onClick={(e) => history("/myorder")}>MY ORDERS</button>
+          <button onClick={(e) => temp()}>MY ORDERS</button>
         </div>
         {/* <Link to={!user && '/login'}>
           <div onClick={handleAuthenticaton} className="header__option">

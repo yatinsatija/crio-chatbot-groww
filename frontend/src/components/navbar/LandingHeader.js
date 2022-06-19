@@ -109,6 +109,11 @@ export default function Navbar() {
                     >
                       Sign Up
                     </MenuItem>
+                    <MenuItem
+                      onClick={() => window.location.assign("/dashboard")}
+                    >
+                      Enter without SignIn
+                    </MenuItem>
                   </div>
                 </Menu>
               </span>

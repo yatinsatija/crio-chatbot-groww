@@ -1,72 +1,207 @@
 [
+   
     {
         "page": "dashboard",
-        "question": "What is the value of Gold ?", 
-        "answer": "It is Rs. 75,000",
-        "logged_in": true,
-        "kyc": true
+        "question": "How to check current share price ?",
+        "answer": "On the dashboard check the current price of the stock. Its the current share price",
+        "logged_in": null,
+        "kyc": null
     },
     {
         "page": "dashboard",
-        "question": "What is the Share price of Gold ?",
-        "answer": "I don't know",
-        "logged_in": true,
-        "kyc": true
+        "question": "What is Fixed Deposit ?", 
+        "answer": "A fixed deposit (FD) is a financial instrument provided by banks or NBFCs which provides investors a higher rate of interest than a regular savings account, until the given maturity date. It may or may not require the creation of a separate account.",
+        "logged_in": null,
+        "kyc": null
     },
     {
         "page": "dashboard",
-        "question": "Do you want to know about fixed deposits ?", 
-        "answer": "I don't know",
-        "logged_in": true,
-        "kyc": true
+        "question": "What is Mututal Fund?", 
+        "answer": "A fixed deposit (FD) is a financial instrument provided by banks or NBFCs which provides investors a higher rate of interest than a regular savings account, until the given maturity date. It may or may not require the creation of a separate account.",
+        "logged_in": null,
+        "kyc": null
     },
     {
-        "page": "orders",
+        "page": "dashboard",
         "question": "What are stocks ?",
-        "answer": "I don't know",
-        "logged_in": true,
-        "kyc": false
+        "answer": "A stock (also known as equity) is a security that represents the ownership of a fraction of a corporation. This entitles the owner of the stock to a proportion of the corporation's assets and profits equal to how much stock they own. Units of stock are called shares.",
+        "logged_in": null,
+        "kyc": null
     },
     {
-        "page": "orders",
+        "page": "dashboard",
         "question": "Mutual funds are safe ?",
-        "answer": "I don't know",
-        "logged_in": false,
-        "kyc": false
+        "answer": "Yes they are safe but a succeptible to market risk",
+        "logged_in": null,
+        "kyc": null
+    },
+    {
+        "page": "dashboard",
+        "question": "How to check the new stocks and other entities ?",
+        "answer": "New stocks are visible as and when admin uploads from the backend",
+        "logged_in": null,
+        "kyc": null
+    },
+    {
+        "page": "dashboard",
+        "question": "How do I buy the product ?",
+        "answer": "You can buy the product by simply clicking on the buy button on the stock or mutual fund or fixed deposit.",
+        "logged_in": null,
+        "kyc": null
+    },
+    {
+        "page": "dashboard",
+        "question": "How to check my investment portfolio?",
+        "answer": "Click on orders button on the header to view your investment portfolio",
+        "logged_in": null,
+        "kyc": null
+    },
+    {
+        "page": "dashboard",
+        "question": "How do I logout?",
+        "answer": "Click on the logout button to logout ",
+        "logged_in": null,
+        "kyc": null
     },
     
     {
+        "page": "home",
+        "question": "How do I register ?",
+        "answer": "Click on the login button and click signup and enter the required details",
+        "logged_in": null,
+        "kyc": null
+    },
+    {
+        "page": "home",
+        "question": "How do I Login ?",
+        "answer": "Click on the login button and click signin ",
+        "logged_in": null,
+        "kyc": null
+    },
+
+    {
+        "page": "home",
+        "question": "How do I enter without login ?",
+        "answer": "As of now we are not allowing entering without logging In ",
+        "logged_in": null,
+        "kyc": null
+    },
+
+    {
+        "page": "home",
+        "question": "How to know about the app ?",
+        "answer": "Click on the about us button to know more about the app ",
+        "logged_in": null,
+        "kyc": null
+    },
+    {
+        "page": "home",
+        "question": "What is this app?",
+        "answer": "Croww is an investing platform where users can find the best mutual funds to invest in and can invest their money without any hassles. ",
+        "logged_in": null,
+        "kyc": null
+    },
+
+    {
+        "page": "register",
+        "question": "Not able to register?",
+        "answer": "Follow basic needs , password and confirm password should match , email should be a valid email address and phone number should be proper, click Register button ",
+        "logged_in": null,
+        "kyc": null
+    },
+    {
+        "page": "register",
+        "question": "What to do after Registering?",
+        "answer": "Page won't redirect anywhere , you yourself have to go back and login with the required credentials again ",
+        "logged_in": null,
+        "kyc": null
+    },
+    {
+        "page": "register",
+        "question": "Can I enter without registering?",
+        "answer": "No you can't enter if you haven't already registered.",
+        "logged_in": null,
+        "kyc": null
+    },
+    {
+        "page": "signin",
+        "question": "Not able to login?",
+        "answer": "Enter email and password and click login enter.",
+        "logged_in": null,
+        "kyc": null
+    },
+    {
+        "page": "signin",
+        "question": "Facing some problem?",
+        "answer": "Make sure you have registered first , email and password should be correctly authenticated.",
+        "logged_in": null,
+        "kyc": null
+    },
+    {
+        "page": "signin",
+        "question": "How to Register?",
+        "answer": "Click login button on the header and select signup.",
+        "logged_in": null,
+        "kyc": null
+    },
+    {
+        "page": "signin",
+        "question": "Can I enter without loggin in?",
+        "answer": "No you can't enter if you haven't logged in.",
+        "logged_in": null,
+        "kyc": null
+    },
+    
+
+    {
         "page": "products",
         "question": "What are fixed deposits ?",
         "answer": "I don't know",
-        "logged_in": false,
-        "kyc": false
+        "logged_in": null,
+        "kyc": null
     },
     {
         "page": "orders",
         "question": "What are stocks ?",
         "answer": "I don't know",
-        "logged_in": true,
-        "kyc": true
+        "logged_in": null,
+        "kyc": null
     },
     {
         "page": "orders",
         "question": "Mutual funds are safe ?",
         "answer": "I don't know",
-        "logged_in": false,
-        "kyc": false
+        "logged_in": null,
+        "kyc": null
+    },
+    
+    
+    {
+        "page": "orders",
+        "question": "Mutual funds are safe ?",
+        "answer": "I don't know",
+        "logged_in": null,
+        "kyc": null
     },
     {
-        "page": "dashboard",
-        "question": "What are mutual funds ?",
+        "page": "orders",
+        "question": "Mutual funds are safe ?",
         "answer": "I don't know",
-        "logged_in": true,
-        "kyc": true
+        "logged_in": null,
+        "kyc": null
     },
     {
-        "page": "products",
-        "question": "What are fixed deposits ?",
+        "page": "orders",
+        "question": "Mutual funds are safe ?",
         "answer": "I don't know",
-        "logged_in": true,
-        "kyc": false
-    }]
+        "logged_in": null,
+        "kyc": null
+    },
+    {
+        "page": "orders",
+        "question": "Mutual funds are safe ?",
+        "answer": "I don't know",
+        "logged_in": null,
+        "kyc": null
+    }
+]

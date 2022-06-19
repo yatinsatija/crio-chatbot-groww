@@ -237,11 +237,13 @@ app.get("/mf", (req, res) => {
   Mf.find().exec(function (error, mfs) {
     // In case of any error, forward request to error handler.
     if (error) {
+      console.log(error);
       next();
     }
     // List of all records from db.
     res.status(200).json(
       mfs.map(function (mf) {
+        console.log("mfs" + mfs);
         return {
           id: mf._id.toString(),
           productname: mf.productname,
@@ -273,6 +275,8 @@ app.get("/fd", (req, res) => {
   Fd.find().exec(function (error, fds) {
     // In case of any error, forward request to error handler.
     if (error) {
+      console.log(error);
+
       next();
     }
     // List of all records from db.

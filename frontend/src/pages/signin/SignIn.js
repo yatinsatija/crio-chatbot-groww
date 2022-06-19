@@ -39,6 +39,8 @@ export default function CustomerSignIn() {
           setLoginStatus(response.data[0].email);
           localStorage.setItem("name", response.data[0].name);
           localStorage.setItem("email", response.data[0].email);
+          localStorage.setItem("kyc", response.data[0].kyc);
+
           // Axios.get("http://localhost:3000/");
           // <Redirect to="http://localhost:3000/epharmacy" />;
           console.log("YES");

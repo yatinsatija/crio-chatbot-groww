@@ -20,8 +20,8 @@ function Order() {
       username: localStorage.getItem("email"),
     }).then((response) => {
       setStockList(response.data.product);
-      setMfList(response.data.fds);
-      setFdList(response.data.mfs);
+      setFdList(response.data.fds);
+      setMfList(response.data.mfs);
       // console.log("stocks" + stocks[0].productname);
     });
     // Axios.get("http://localhost:3001/mf").then((response) => {
@@ -49,23 +49,8 @@ function Order() {
             alt="EPharma"
             style={{ height: "90vh", width: "200vh" }}
           />
-          <div className="home__row">
-            {/* <Product
-              id="12321341"
-              title="PARACETEMOL"
-              price={11.96}
-              rating={5}
-              image="https://m.jagranjosh.com/imported/images/E/GK/paracetamol-tablets-export.jpg"
-            />
-            <Product
-              id="49538094"
-              title="NEMULID TABLETS"
-              price={11.0}
-              rating={4}
-              image="https://www.medwik.in/wp-content/uploads/2020/08/nimulid-tablet.jpg"
-            /> */}
-          </div>
-
+          <div className="home__row"></div>
+          <h1>Stocks</h1>
           <div className="home__row">
             {stocks.map((val, key) => {
               console.log("name " + val.productname);
@@ -77,7 +62,7 @@ function Order() {
                   currentprice={val.currentprice}
                   idvalue={val.idvalue}
                   idper={val.idper}
-                  image={val.img}
+                  image={val.image}
                 />
               );
             })}
@@ -103,17 +88,18 @@ function Order() {
               image="https://5.imimg.com/data5/ZL/ZK/UC/SELLER-41272859/tetanus-toxoid-vaccine-adsorbed-250x250.jpg"
             /> */}
           </div>
+          <h1>Mututal Funds</h1>
           <div className="home__row">
             {mfs.map((val, key) => {
-              // console.log("name " + val.productname);
+              console.log("name mfs " + JSON.stringify(val));
 
               return (
                 <Mf
                   id={val.id}
                   productname={val.productname}
-                  percentage={val.mfper}
-                  year={val.mfyear}
-                  image={val.img}
+                  percentage={val.percentage}
+                  year={val.year}
+                  image={val.image}
                 />
               );
             })}
@@ -139,6 +125,7 @@ function Order() {
               image="https://5.imimg.com/data5/ZL/ZK/UC/SELLER-41272859/tetanus-toxoid-vaccine-adsorbed-250x250.jpg"
             /> */}
           </div>
+          <h1>Fixed Deposits</h1>
           <div className="home__row">
             {fds.map((val, key) => {
               // console.log("name " + val.productname);
@@ -149,7 +136,7 @@ function Order() {
                   companyname={val.companyname}
                   percentage={val.percentage}
                   year={val.year}
-                  image={val.img}
+                  image={val.image}
                 />
               );
             })}

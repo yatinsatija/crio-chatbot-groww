@@ -27,6 +27,7 @@ function App() {
                 <>
                   <LandingHeader />
                   <HomePage />
+                  <ChatbotInterface URLName="home" />
                 </>
               }
             />
@@ -37,6 +38,7 @@ function App() {
                 <>
                   <LandingHeader />
                   <Registration />
+                  <ChatbotInterface URLName="register" />
                 </>
               }
             />
@@ -47,6 +49,7 @@ function App() {
                 <>
                   <CSHeader />
                   <Order />
+                  <ChatbotInterface URLName="orders" />
                 </>
               }
             />
@@ -58,6 +61,7 @@ function App() {
                   <LandingHeader />
                   <br />
                   <CustomerSignIn />
+                  <ChatbotInterface URLName="signin" />
                 </>
               }
             />

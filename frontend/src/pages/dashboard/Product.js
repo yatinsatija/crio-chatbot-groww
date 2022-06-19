@@ -6,6 +6,9 @@ import Axios, * as others from "axios";
 
 function Product({ id, productname, currentprice, idvalue, idper, image }) {
   const [basket, dispatch] = useState({});
+  const temp2 = () => {
+    console.log("Item Sold");
+  };
 
   const addToBasket = () => {
     // dispatch the item into the data layer
@@ -20,20 +23,24 @@ function Product({ id, productname, currentprice, idvalue, idper, image }) {
     //     image: image,
     //   },
     // });
-    Axios.post("http://localhost:3001/addproduct", {
-      username: localStorage.getItem("email"),
-      product: {
-        id: id,
-        productname: productname,
-        currentprice: currentprice,
-        idvalue: idvalue,
-        idper: idper,
-        image: image,
-      },
-    }).then((response) => {
-      console.log(response);
-      alert("Item Bought");
-    });
+    if (localStorage.getItem("isLoggedIn") === "true") {
+      Axios.post("http://localhost:3001/addproduct", {
+        username: localStorage.getItem("email"),
+        product: {
+          id: id,
+          productname: productname,
+          currentprice: currentprice,
+          idvalue: idvalue,
+          idper: idper,
+          image: image,
+        },
+      }).then((response) => {
+        console.log(response);
+        alert("Item Bought");
+      });
+    } else {
+      alert("Please Log In First");
+    }
   };
 
   return (
@@ -58,7 +65,15 @@ function Product({ id, productname, currentprice, idvalue, idper, image }) {
 
       <img src={image} alt="" />
 
-      <button onClick={addToBasket}>BUY</button>
+      {window.location.pathname === "/dashboard" ? (
+        <>
+          <button onClick={addToBasket}>BUY</button>
+        </>
+      ) : (
+        <>
+          <button onClick={temp2()}>SELL</button>
+        </>
+      )}
     </div>
   );
 }

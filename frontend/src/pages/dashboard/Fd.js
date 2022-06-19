@@ -19,20 +19,28 @@ function Fd({ id, companyname, percentage, year, image }) {
     //     image: image,
     //   },
     // });
-    Axios.post("http://localhost:3001/addfd", {
-      username: localStorage.getItem("email"),
-      fds: {
-        id: id,
-        companyname: companyname,
-        percentage: percentage,
-        year: year,
+    if (localStorage.getItem("isLoggedIn") === "true") {
+      Axios.post("http://localhost:3001/addfd", {
+        username: localStorage.getItem("email"),
+        fds: {
+          id: id,
+          companyname: companyname,
+          percentage: percentage,
+          year: year,
 
-        image: image,
-      },
-    }).then((response) => {
-      console.log(response);
-      alert("Item bought");
-    });
+          image: image,
+        },
+      }).then((response) => {
+        console.log(response);
+        alert("Item bought");
+      });
+    } else {
+      alert("Please Log In First");
+    }
+  };
+  const temp2 = () => {
+    // console.log("Item Sold");
+    console.log("Item Sold");
   };
 
   return (
@@ -57,7 +65,15 @@ function Fd({ id, companyname, percentage, year, image }) {
 
       <img src={image} alt="" />
 
-      <button onClick={addToBasket}>BUY</button>
+      {window.location.pathname === "/dashboard" ? (
+        <>
+          <button onClick={addToBasket}>BUY</button>
+        </>
+      ) : (
+        <>
+          <button onClick={temp2()}>SELL</button>
+        </>
+      )}
     </div>
   );
 }
